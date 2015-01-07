@@ -1,0 +1,14 @@
+Module104310Name = Userlimit
+Module104310Desc = Userlimit Descripion
+
+ATMAbout = Ce module a été développé par <a href="http://www.atm-consulting.fr" target="_blank">ATM Consulting</a><br>Vous pouvez retrouver la documentation sur notre <a href="http://wiki.atm-consulting.fr/index.php/Accueil" target="_blank">wiki</a><br><br>Pour toute question technique ou retour, contactez-nous sur <a href="mailto:support@atm-consulting.fr">support@atm-consulting.fr</a><br><br>Pour toute question commerciale, contactez-nous sur <a href="mailto:contact@atm-consulting.fr">contact@atm-consulting.fr</a> ou au +33 9 77 19 50 70<br><br>Retrouvez nos autres modules sur <a href="http://www.dolistore.com/search.php?orderby=position&orderway=desc&search_query=atm&submit_search=Rechercher" target="_blank">Dolistore</a>
+
+UserlimitSetup = Configuration du module Userlimit
+UserlimitAbout = A propos du module Userlimit
+
+userlimitBlockUserLoginOnLimit=Bloquer l'identification des users non superadmin si la limite est dépassée
+userlimitNbMaxUser=Nombre maximum d'utilisateurs de ce Dolibarr
+userlimitWarnLevel=Alerte à la création/login à partir de quel nombre ?
+userlimitWarnMsg=Le nombre d'utilisateurs approche de la limite haute (%s/%s).
+userlimitMaxMsg=Le nombre d'utilisateurs a atteint la limite haute (%s).
+userlimitBlockMsg=Le nombre d'utilisateurs dépasse la limite haute, merci de désactiver des comptes pour permettre l'identification.
