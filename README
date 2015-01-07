@@ -1,3 +1,5 @@
+# dolibarr_module_userlimit
+
 /* 
  * Copyright (C) 2015 ATM Consulting <support@atm-consulting.fr>
  *
@@ -15,5 +17,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
+
+Module permettant de limiter le nombre d'utilisateur créé sous Dolibarr. Utile pour gérer et limiter des solutions SaaS
 
 
