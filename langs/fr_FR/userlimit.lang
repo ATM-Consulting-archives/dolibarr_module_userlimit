@@ -11,4 +11,5 @@ userlimitNbMaxUser=Nombre maximum d'utilisateurs de ce Dolibarr
 userlimitWarnLevel=Alerte à la création/login à partir de quel nombre ?
 userlimitWarnMsg=Le nombre d'utilisateurs approche de la limite haute (%s/%s).
 userlimitMaxMsg=Le nombre d'utilisateurs a atteint la limite haute (%s).
-userlimitBlockMsg=Le nombre d'utilisateurs dépasse la limite haute, merci de désactiver des comptes pour permettre l'identification.
+userlimitBlockMsg=Le nombre d'utilisateurs dépasse la limite haute, merci de désactiver des comptes pour permettre la création ou l'activation
+userlimitBlockLoginMsg=Le nombre d'utilisateurs dépasse la limite haute, merci de désactiver des comptes pour permettre l'identification

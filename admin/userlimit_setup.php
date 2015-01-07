@@ -115,7 +115,7 @@ print '<td align="right" width="300">';
 print '<form method="POST" action="'.$_SERVER['PHP_SELF'].'">';
 print '<input type="hidden" name="token" value="'.$_SESSION['newtoken'].'">';
 print '<input type="hidden" name="action" value="set_USERLIMIT_STOP_LOGIN">';
-print $form->selectyesno("USERLIMIT_STOP_LOGIN",$conf->global->CONSTNAME,1);
+print $form->selectyesno("USERLIMIT_STOP_LOGIN",$conf->global->USERLIMIT_STOP_LOGIN,1);
 print '<input type="submit" class="button" value="'.$langs->trans("Modify").'">';
 print '</form>';
 print '</td></tr>';

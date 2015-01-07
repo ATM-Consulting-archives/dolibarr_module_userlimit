@@ -53,3 +53,33 @@ function userlimitAdminPrepareHead()
 
     return $head;
 }
+
+function testNbUser($msg=true) {
+	global $db,$conf,$langs;
+			
+	$res = $db->query("SELECT count(*) as nb FROM ".MAIN_DB_PREFIX."user WHERE statut=1");
+	$obj = $db->fetch_object($res);
+	$nb_user=$obj->nb;
+	
+	$langs->Load('userlimit@userlimit');
+	
+/*	if($conf->global->USERLIMIT_MAX<$nb_user && $conf->global->USERLIMIT_STOP_LOGIN) {
+		
+		
+	}
+	else*/ if($conf->global->USERLIMIT_MAX<$nb_user) {
+		if($msg) setEventMessage($langs->trans('userlimitBlockMsg', $conf->global->USERLIMIT_MAX), 'errors');
+		return false;
+	}
+	else if($conf->global->USERLIMIT_MAX<=$nb_user) {
+		if($msg) setEventMessage($langs->trans('userlimitMaxMsg', $conf->global->USERLIMIT_MAX), 'warnings');
+		return true;
+	}
+	else if($conf->global->USERLIMIT_WARN<=$nb_user) {
+		if($msg) setEventMessage($langs->trans('userlimitWarnMsg', $nb_user, $conf->global->USERLIMIT_MAX), 'warnings');
+		return true;
+	}
+	
+	return true;
+	
+}

@@ -117,43 +117,32 @@ class InterfaceUserlimittrigger
         // Data and type of action are stored into $object and $action
         // Users
         
-       
-        
         if ($action === 'USER_LOGIN') {
-        	global $langs;
+        	/*dol_include_once('/userlimit/lib/userlimit.lib.php');
 			
 			$db=&$this->db;
-			$res = $db->query("SELECT count(*) as nb FROM ".MAIN_DB_PREFIX."user WHERE statut=1");
-			$obj = $db->fetch_object($res);
-			$nb_user=$obj->nb;
 			
-			if($conf->global->USERLIMIT_MAX<$nb_user) {
-				setEventMessage($langs->trans('userlimitMaxMsg', $conf->global->USERLIMIT_MAX), 'errors');
-			}
-			else if($conf->global->USERLIMIT_WARN<=$nb_user) {
-				exit($langs->trans('userlimitWarnMsg', $nb_user, $conf->global->USERLIMIT_MAX));
-				setEventMessage($langs->trans('userlimitWarnMsg', $nb_user, $conf->global->USERLIMIT_MAX), 'warnings');
+			if(!testNbUser() && $conf->global->USERLIMIT_STOP_LOGIN) {
+				
+				//$this->errors[] = $langs->trans('userlimitBlockLoginMsg');
+				
+				return -1; // ne gère pas une erreur perso mais une sale merde
+			}*/
+			
+		}
+		else if ($action === 'USER_CREATE' || $action === 'USER_ENABLEDISABLE') {
+        	
+			dol_include_once('/userlimit/lib/userlimit.lib.php');
+			
+			if(!testNbUser()) {
+				
+				return -1;
 			}
 			
-            dol_syslog(
-                "Trigger '" . $this->name . "' for action '$action' launched by " . __FILE__ . ". id=" . $object->id
-            );
-        } 
-        elseif ($action == 'USER_CREATE') {
             dol_syslog(
                 "Trigger '" . $this->name . "' for action '$action' launched by " . __FILE__ . ". id=" . $object->id
             );
         }
-        elseif ($action == 'USER_MODIFY') {
-            dol_syslog(
-                "Trigger '" . $this->name . "' for action '$action' launched by " . __FILE__ . ". id=" . $object->id
-            );
-        } 
-        elseif ($action == 'USER_ENABLEDISABLE') {
-            dol_syslog(
-                "Trigger '" . $this->name . "' for action '$action' launched by " . __FILE__ . ". id=" . $object->id
-            );
-        } 
 
         return 0;
     }
